@@ -44,16 +44,5 @@ function handleCalculationClick(calculationFunction: (inputData: string) => numb
     };
 }
 
-document.getElementById('calculateDistanceBtn')!.addEventListener('click', function(event) {
-    const inputData = dataInput.value;
-
-    try {
-        const result = calculateTotalDistance(inputData);
-        resultSpan.textContent = `${result}`;
-    } catch (error) {
-        resultSpan.textContent = 'Invalid input';
-    }
-});
-
 document.getElementById('calculateDistanceBtn')!.addEventListener('click', handleCalculationClick(calculateTotalDistance));
 document.getElementById('calculateSimilarityBtn')!.addEventListener('click', handleCalculationClick(calculateSimilarityScore));
